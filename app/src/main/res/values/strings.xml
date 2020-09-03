@@ -1,0 +1,73 @@
+<resources>
+    <string name="app_name">Love To</string>
+
+    <!-- Commons -->
+
+    <string name="error">Error</string>
+    <string name="ok">OK</string>
+    <string name="permissions_error">Permission Denied</string>
+    <string name="done">Done</string>
+    <string name="no_internet_access">There is no internet access</string>
+    <string name="information_will_sync_when_there_is_wifi">Information will sync when there is wifi</string>
+
+    <!-- Login Fragment -->
+    <string name="log_in">Log in</string>
+    <string name="email_address">email address</string>
+    <string name="password">password</string>
+    <string name="forgot_password">Forgot password</string>
+    <string name="incorrect_login_password">login or password incorrect. Please try again or contact your coop</string>
+
+    <!-- Home Fragment -->
+    <string name="walker">Walker</string>
+    <string name="agreement">Agreement</string>
+    <string name="claim">Claim</string>
+    <string name="syncs">Syncs</string>
+    <string name="logout">Logout</string>
+
+    <!-- SelectFarmerFragment -->
+    <string name="choose_farmer">Choose farmer</string>
+
+    <!-- FarmerDetailFragment -->
+    <string name="farmer_number">Farmer N:</string>
+    <string name="name">Name:</string>
+    <string name="address">Address:</string>
+    <string name="sqm2">SqM2:</string>
+    <string name="select">Select</string>
+    <string name="cancel">Cancel</string>
+
+    <!-- ClaimFragment -->
+    <string name="soil">Soil</string>
+    <string name="soil_tooltip">Conserved soil, improved soil fertility</string>
+    <string name="catchment_management">Catchment management</string>
+    <string name="catchment_management_tooltip">Protect and/or revegetate watershed catchment</string>
+    <string name="water">Water</string>
+    <string name="water_tooltip">Created water supply with wells and springs</string>
+    <string name="higher_better_land">Higher better land use</string>
+    <string name="higher_better_land_tooltip">Converted waste land to productive land</string>
+    <string name="sustainable_food_production">Sustainable food production</string>
+    <string name="sustainable_food_production_1_tooltip">Crops and trees</string>
+    <string name="sustainable_food_production_2_tooltip">Animals including bees</string>
+    <string name="please_select_at_least_one_option">Please select at least one option</string>
+
+    <!-- ClaimSubmittedFragment -->
+    <string name="claim_submitted_text">You have submitted the claim on behalf of %s farmer</string>
+
+    <!-- AgreementTermsFragment -->
+    <string name="agreement_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lacus mauris, fringilla a pellentesque quis, tristique et justo. Maecenas eget suscipit sapien, sit amet consectetur metus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque sit amet quam at orci condimentum dictum at vel odio. Morbi tempus varius molestie. Nunc pellentesque risus a leo congue, quis convallis mauris dignissim. Aliquam ut euismod lacus, facilisis fringilla ex. Nulla quis pulvinar risus, a ullamcorper augue. In tincidunt imperdiet mi ut tincidunt. Morbi pharetra, felis eu blandit lacinia, mi leo rutrum ante, eget pretium ipsum ligula in massa. Sed eget libero quis eros tristique dictum id non nisi. Vestibulum suscipit facilisis eros, quis aliquet mi pellentesque aliquet. Cras in metus mattis eros facilisis auctor ut sit amet dolor. Vivamus tristique urna vel lacus tristique pharetra.</string>
+    <string name="confirm">Confirm</string>
+
+    <!-- AgreementTakeVideoFragment -->
+    <string name="agreement_take_video_text">We need to take a video now,where the farmer confirms he understood the agreement</string>
+    <string name="take_video">Take video</string>
+    <string name="retake">Retake</string>
+
+    <!-- AgreementSubmittedFragment -->
+    <string name="agreement_submitted_text">You have agreement the claim on behalf of %s farmer</string>
+
+    <!-- SyncFragment -->
+    <string name="farmer">Farmer</string>
+    <string name="type">Type</string>
+    <string name="sync">Sync</string>
+    <string name="back">Back</string>
+
+</resources>

@@ -1,0 +1,50 @@
+ext {
+
+    signingDebug = {
+        android.signingConfigs.debug {
+            File propertiesFile = loadPropertiesFile("debug")
+            def properties = loadProperties(propertiesFile)
+            storeFile loadFileFromGoogleDir("debug.keystore")
+            storePassword properties.UPLANNER_DEBUG_STORE_PASSWORD
+            keyAlias properties.UPLANNER_DEBUG_KEY_ALIAS
+            keyPassword properties.UPLANNER_DEBUG_KEY_PASSWORD
+        }
+    }
+
+    signingProd = {
+        android.signingConfigs.prod {
+            File propertiesFile = loadPropertiesFile("release")
+            def properties = loadProperties(propertiesFile)
+            storeFile loadFileFromGoogleDir("release.keystore")
+            storePassword properties.UPLANNER_STORE_PASSWORD
+            keyAlias properties.UPLANNER_KEY_ALIAS
+            keyPassword properties.UPLANNER_STORE_PASSWORD
+        }
+    }
+
+    signingDemo = {
+        android.signingConfigs.demo {
+            File propertiesFile = loadPropertiesFile("demo")
+            def properties = loadProperties(propertiesFile)
+            storeFile loadFileFromGoogleDir("demo.keystore")
+            storePassword properties.UPLANNER_STORE_PASSWORD
+            keyAlias properties.UPLANNER_KEY_ALIAS
+            keyPassword properties.UPLANNER_STORE_PASSWORD
+        }
+    }
+
+    loadPropertiesFile = { name ->
+        return loadFileFromGoogleDir("${name}.properties")
+    }
+
+    loadProperties = { propertiesFile ->
+        def properties = new Properties()
+        properties.load(new FileInputStream(propertiesFile))
+        return properties
+    }
+
+    loadFileFromGoogleDir = { fileName ->
+        def googleDirPath = "gradle-scripts/google/"
+        rootProject.file("${googleDirPath}${fileName}")
+    }
+}

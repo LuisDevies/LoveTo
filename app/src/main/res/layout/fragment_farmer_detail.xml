@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="farmer"
+            type="com.global.loveto.domain.model.Farmer" />
+
+        <variable
+            name="title"
+            type="String" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragment.FarmerDetailFragment">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar_back"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+            <ImageView
+                android:id="@+id/iv_logo"
+                android:layout_width="120dp"
+                android:layout_height="80dp"
+                android:src="@drawable/logo_horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_farmer_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/big_margin"
+                android:background="@drawable/bg_white_rounded"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_logo">
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="@{title}"
+                    android:textSize="@dimen/text_big_title_size"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_farmer_number_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="@string/farmer_number"
+                    android:textSize="@dimen/text_big_title_size"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+                <TextView
+                    android:id="@+id/tv_farmer_number_value"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
+                    android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                    android:fontFamily="@font/montserrat_light"
+                    android:text="@{farmer.number}"
+                    android:textSize="@dimen/text_big_title_size"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tv_farmer_number_label"
+                    app:layout_constraintTop_toTopOf="@id/tv_farmer_number_label" />
+
+                <TextView
+                    android:id="@+id/tv_farmer_name_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="@string/name"
+                    android:textSize="@dimen/text_big_title_size"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_farmer_number_label" />
+
+                <TextView
+                    android:id="@+id/tv_farmer_name_value"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
+                    android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                    android:fontFamily="@font/montserrat_light"
+                    android:text="@{farmer.name}"
+                    android:textSize="@dimen/text_big_title_size"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tv_farmer_name_label"
+                    app:layout_constraintTop_toTopOf="@id/tv_farmer_name_label" />
+
+                <TextView
+                    android:id="@+id/tv_farmer_address_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="@string/address"
+                    android:textSize="@dimen/text_big_title_size"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_farmer_name_label" />
+
+                <TextView
+                    android:id="@+id/tv_farmer_address_value"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
+                    android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                    android:fontFamily="@font/montserrat_light"
+                    android:text="@{farmer.address}"
+                    android:textSize="@dimen/text_big_title_size"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tv_farmer_address_label"
+                    app:layout_constraintTop_toTopOf="@id/tv_farmer_address_label" />
+
+                <TextView
+                    android:id="@+id/tv_farmer_sqm2_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="@string/sqm2"
+                    android:textSize="@dimen/text_big_title_size"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_farmer_address_label" />
+
+                <TextView
+                    android:id="@+id/tv_farmer_sqm2_value"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
+                    android:layout_marginBottom="@dimen/activity_horizontal_margin"
+                    android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:fontFamily="@font/montserrat_light"
+                    android:text="@{String.valueOf(farmer.sqm2)}"
+                    android:textSize="@dimen/text_big_title_size"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tv_farmer_sqm2_label"
+                    app:layout_constraintTop_toTopOf="@id/tv_farmer_sqm2_label" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <TextView
+                android:id="@+id/bt_select"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/big_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginBottom="@dimen/normal_margin"
+                android:padding="@dimen/small_padding"
+                android:gravity="center"
+                android:background="@drawable/bg_green_rounded"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="@string/select"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/cl_farmer_data" />
+
+            <TextView
+                android:id="@+id/bt_cancel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/big_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginBottom="@dimen/normal_margin"
+                android:padding="@dimen/small_padding"
+                android:gravity="center"
+                android:background="@drawable/bg_blue_rounded"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="@string/cancel"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/bt_select" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

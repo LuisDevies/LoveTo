@@ -1,0 +1,131 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: "kotlin-kapt"
+
+android {
+    compileSdkVersion compileSdk
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "com.global.loveto"
+        minSdkVersion minSdk
+        targetSdkVersion targetSdk
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+            minifyEnabled false
+            shrinkResources false
+            useProguard false
+            testCoverageEnabled false
+            signingConfig signingConfigs.debug
+        }
+        release {
+            debuggable false
+            minifyEnabled false
+            shrinkResources false
+            useProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            testProguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguardTest-rules.pro'
+        }
+    }
+
+    flavorDimensions "global"
+    productFlavors {
+        dev {
+            buildConfigField "String", "URL_BASE_LOVE_TO_API", "\"http://95.217.211.75/api/\""
+            dimension "global"
+        }
+        qa {
+            buildConfigField "String", "URL_BASE_LOVE_TO_API", "\"http://95.217.211.75/api/\""
+            dimension "global"
+        }
+        prod {
+            buildConfigField "String", "URL_BASE_LOVE_TO_API", "\"http://95.217.211.75/api/\""
+            dimension "global"
+        }
+        demo {
+            buildConfigField "String", "URL_BASE_LOVE_TO_API", "\"http://95.217.211.75/api/\""
+            dimension "global"
+        }
+    }
+
+    sourceSets.forEach {
+        it.java.srcDirs = ["src/$it.name/kotlin"]
+        it.resources.srcDir("src/$it.name/res")
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlin_version}"
+    implementation "androidx.appcompat:appcompat:${versions.androidx_appcompat}"
+    implementation "androidx.core:core-ktx:${versions.androidx_core}"
+    implementation "androidx.constraintlayout:constraintlayout:${versions.androidx_constraintlayout}"
+    implementation "androidx.arch.core:core-runtime:${versions.androidx_arch_core}"
+    implementation "androidx.arch.core:core-common:${versions.androidx_arch_core}"
+    implementation "androidx.core:core-ktx:${versions.androidx_core}"
+    implementation "androidx.lifecycle:lifecycle-runtime:${versions.androidx_lifecycle}"
+    implementation "androidx.lifecycle:lifecycle-common-java8:${versions.androidx_lifecycle}"
+    implementation "androidx.lifecycle:lifecycle-extensions:${versions.androidx_lifecycle}"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.androidx_lifecycle}"
+    implementation "com.google.android.material:material:${versions.material}"
+    implementation "com.karumi:dexter:${versions.dexter}"
+
+    implementation "androidx.legacy:legacy-support-v4:${versions.legacy_v4}"
+    implementation "androidx.cardview:cardview:${versions.androidx_cardview}"
+
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    kapt "androidx.lifecycle:lifecycle-compiler:${versions.androidx_lifecycle}"
+
+    implementation "org.koin:koin-android:${versions.koin}"
+    implementation "org.koin:koin-androidx-scope:${versions.koin}"
+    implementation "org.koin:koin-androidx-viewmodel:${versions.koin}"
+    testImplementation "org.koin:koin-test:${versions.koin}"
+
+    implementation "com.squareup.okhttp3:okhttp:${versions.okhttp}"
+    implementation "com.squareup.okhttp3:logging-interceptor:${versions.okhttp}"
+    implementation "com.squareup.retrofit2:retrofit:${versions.retrofit}"
+    implementation "com.squareup.retrofit2:converter-gson:${versions.retrofit}"
+
+    implementation "androidx.room:room-runtime:${versions.androidx_room}"
+    implementation "androidx.room:room-ktx:${versions.androidx_room}"
+    kapt "androidx.room:room-compiler:${versions.androidx_room}"
+    testImplementation "androidx.room:room-testing:${versions.androidx_room}"
+    testImplementation "junit:junit:${versions.junit}"
+    androidTestImplementation "androidx.test.ext:junit:${versions.androidx_test_units}"
+    androidTestImplementation "androidx.test.espresso:espresso-core:${versions.espresso_core}"
+
+    implementation("com.squareup.picasso:picasso:${versions.picasso}") {
+        exclude group: "com.android.support"
+    }
+
+    implementation 'com.android.support:multidex:1.0.3'
+
+    //Circular ImageView
+    implementation "de.hdodenhof:circleimageview:${versions.circle_imageview}"
+}

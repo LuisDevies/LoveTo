@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.ClaimFragment">
+
+    <include
+        android:id="@+id/toolbar_claims"
+        layout="@layout/toolbar_back"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_claims">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_logo"
+                android:layout_width="120dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="@dimen/big_margin"
+                android:src="@drawable/logo_horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_farmer_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/small_padding"
+                android:background="@drawable/bg_white_rounded"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_logo">
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/activity_vertical_margin"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="@string/claim"
+                    android:textSize="@dimen/text_big_title_size"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/bt_soil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/big_margin"
+                android:layout_marginTop="@dimen/big_margin"
+                android:layout_marginEnd="@dimen/big_margin"
+                android:layout_marginBottom="@dimen/normal_margin"
+                android:background="@drawable/bg_grey_rounded"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:padding="@dimen/larger_padding"
+                android:text="@string/soil"
+                android:textAllCaps="false"
+                android:textColor="@color/color_text_title"
+                android:tooltipText="@string/soil_tooltip"
+                app:layout_constraintTop_toBottomOf="@id/cl_farmer_data" />
+
+            <TextView
+                android:id="@+id/bt_catchment_managment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/big_margin"
+                android:layout_marginTop="@dimen/big_margin"
+                android:layout_marginEnd="@dimen/big_margin"
+                android:layout_marginBottom="@dimen/normal_margin"
+                android:background="@drawable/bg_grey_rounded"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center"
+                android:padding="@dimen/larger_padding"
+                android:text="@string/catchment_management"
+                android:textAllCaps="false"
+                android:textColor="@color/color_text_title"
+                android:tooltipText="@string/catchment_management_tooltip"
+                app:layout_constraintTop_toBottomOf="@id/bt_soil" />
+
+            <TextView
+                android:id="@+id/bt_water"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/big_margin"
+                android:layout_marginTop="@dimen/big_margin"
+                android:layout_marginEnd="@dimen/big_margin"
+                android:layout_marginBottom="@dimen/normal_margin"
+                android:background="@drawable/bg_grey_rounded"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center"
+                android:padding="@dimen/larger_padding"
+                android:text="@string/water"
+                android:textAllCaps="false"
+                android:textColor="@color/color_text_title"
+                android:tooltipText="@string/water_tooltip"
+                app:layout_constraintTop_toBottomOf="@id/bt_catchment_managment" />
+
+            <TextView
+                android:id="@+id/bt_land_use"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/big_margin"
+                android:layout_marginTop="@dimen/big_margin"
+                android:layout_marginEnd="@dimen/big_margin"
+                android:layout_marginBottom="@dimen/normal_margin"
+                android:background="@drawable/bg_grey_rounded"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center"
+                android:padding="@dimen/larger_padding"
+                android:text="@string/higher_better_land"
+                android:textAllCaps="false"
+                android:textColor="@color/color_text_title"
+                android:tooltipText="@string/higher_better_land_tooltip"
+                app:layout_constraintTop_toBottomOf="@id/bt_water" />
+
+            <TextView
+                android:id="@+id/bt_crops"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/big_margin"
+                android:layout_marginTop="@dimen/big_margin"
+                android:layout_marginEnd="@dimen/big_margin"
+                android:layout_marginBottom="@dimen/normal_margin"
+                android:background="@drawable/bg_grey_rounded"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center"
+                android:padding="@dimen/larger_padding"
+                android:text="@string/sustainable_food_production"
+                android:textAllCaps="false"
+                android:textColor="@color/color_text_title"
+                android:tooltipText="@string/sustainable_food_production_1_tooltip"
+                app:layout_constraintTop_toBottomOf="@id/bt_land_use" />
+
+            <TextView
+                android:id="@+id/bt_animals"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/big_margin"
+                android:layout_marginTop="@dimen/big_margin"
+                android:layout_marginEnd="@dimen/big_margin"
+                android:layout_marginBottom="@dimen/normal_margin"
+                android:background="@drawable/bg_grey_rounded"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center"
+                android:padding="@dimen/larger_padding"
+                android:text="@string/sustainable_food_production"
+                android:textAllCaps="false"
+                android:textColor="@color/color_text_title"
+                android:tooltipText="@string/sustainable_food_production_2_tooltip"
+                app:layout_constraintTop_toBottomOf="@id/bt_crops" />
+
+
+            <TextView
+                android:id="@+id/bt_submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/big_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginBottom="@dimen/normal_margin"
+                android:background="@drawable/bg_green_rounded"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center"
+                android:padding="@dimen/small_padding"
+                android:text="@string/select"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bt_animals" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
